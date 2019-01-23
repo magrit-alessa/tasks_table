@@ -7,8 +7,8 @@ import tasks from '@/assets/tasks.json'
 config.mocks.$store = {
   state:{
   	 tasks:[{
-		    "id": 1,
-		    "name": "Today_task1",
+		    "id": 30,
+		    "name": "Today_task30",
 		    "creation_date": "2015-04-21T06:50:21",
 		    "due_date": "2015-04-22T23:59:00",
 		    "start_date": "2015-04-21T00:00:01",
