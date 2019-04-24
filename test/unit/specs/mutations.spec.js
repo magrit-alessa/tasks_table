@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { createLocalVue, shallowMount, config } from '@vue/test-utils'
-import TableTasks from '@/components/TableTasks'
+import {mutations} from '@/store/index'
 import tasks from '@/assets/tasks.json'
 
-config.mocks.$store = {
-  state:{
+
+
+describe('mutations', () => {
+	let state = {
   	 tasks:[{
 		    "id": 30,
 		    "name": "Today_task30",
@@ -22,20 +23,15 @@ config.mocks.$store = {
 		    "project_id": 0
 		  }]
     
-  }
+  } 
+	 
+  it('mutations', () => {
   
-}
+  const text = "text"
+  const index = 0
 
-
-describe('TableTask.vue', () => {
-	 const $route = {
-	  path: '/'
-   }
-
-  it('should render correct contents', () => {
-  
-  const wrapper = shallowMount(TableTasks)
- 
-   expect(wrapper.contains('tbody > tr > td')).toBe(true)
+  mutations.CHANGE_NAME(state, {text, index})
+  expect(state.tasks[index].name).toBe("text")
+   
   })
 })

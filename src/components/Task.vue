@@ -1,24 +1,49 @@
 <template>
-   
+   <div>
+
+    <v-app>
+    
+     <router-link to="/" class="back"> 
+
+     <v-btn color="purple" dark>
+         &larr; Back to table
+        </v-btn>
+      </router-link>
+    <v-layout>
+    <v-flex xs12 sm6 offset-sm3>
+    <v-card>
     <div
       id="task"
-      style="max-width: 70%; margin: auto;"
-      class="purple lighten-5 headline"
       v-if="task"
     >
-       <div>
-         <label-edit 
-         style="cursor: pointer;" 
-         class=" mb-0 white--text deep-purple lighten-2 " v-bind:text="text" 
-         v-on:text-updated-enter="textUpdateCallbackEnter"></label-edit> 
-       </div>
-      <div >Description: {{task.description}}</div>
-      <div  class="deep-purple lighten-3 white--text">Creation Date: {{task.creation_date | formatDate}}</div>
-      <div>Physical progress: {{task.physical_progress}}</div>
-      <div class="deep-purple lighten-3 white--text">Actual effort: {{task.actual_effort}}</div>
-      <div>Estimated effort: {{task.estimated_effort}}</div>
-      <div class="deep-purple lighten-3 white--text">Start date: {{task.start_date| formatDate}}</div>
-      <div>Last date: {{task.due_date | formatDate}}</div>
+    
+     <v-card-title primary-title class="purple lighten-4">
+       <v-layout justify-center>
+          <label-edit 
+              style="cursor: pointer; color: white; font-size: 22px; font-weight: bold;" 
+              v-bind:text="text" 
+              v-on:text-updated-blur="textUpdateCallbackEnter"></label-edit>
+               </v-layout > 
+             </v-card-title>
+             <v-container fill-height fluid>
+              <v-layout fill-height>
+               <v-flex xs12 align-end flexbox>
+                  <div >Description: {{task.description}}</div>
+                  <div>Creation Date: {{task.creation_date | formatDate}}</div>
+                  <div>Physical progress: {{task.physical_progress}}</div>
+                  <div>Actual effort: {{task.actual_effort}}</div>
+                  <div>Estimated effort: {{task.estimated_effort}}</div>
+                  <div>Start date: {{task.start_date| formatDate}}</div>
+                  <div>Last date: {{task.due_date | formatDate}}</div>
+                    </v-flex>
+                   </v-layout>
+                  </v-container>
+                </div>
+
+              </v-card>
+            </v-flex>
+          </v-layout>
+      </v-app>
     </div>
   
   
@@ -67,5 +92,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.back{
+  position: absolute;
+  left:1.5%;
+  top:-2%;
+  text-decoration: none;
+}
 
 </style>

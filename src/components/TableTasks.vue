@@ -1,6 +1,7 @@
 <template>
   <div>
-     <table class="elevation-6">
+
+     <table class="elevation-3">
       <thead>
         <tr>
           <td>Task name</td>
@@ -43,9 +44,11 @@ export default {
 table{
   width: 100%;
   font-size: 17px ;
+
 }
 td{
   height: 35px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.4);
 }
 thead{
   background-color: #E0E0E0;
